@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central Library</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <section class="card gallery-section">
+  <h2>📸 Library Gallery</h2>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Replace with your images -->
+      <div class="swiper-slide"><img src="image/cl1.jpg" alt="Library 1" /></div>
+      <div class="swiper-slide"><img src="image/cl2.jpg" alt="Library 2" /></div>
+      <div class="swiper-slide"><img src="image/cl3.jpg" alt="Library 3" /></div>
+      <div class="swiper-slide"><img src="image/cl4.jpg" alt="Library 4" /></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+  <main>
+    <section class="card fade-in">
+      <h2>👋 Welcome</h2>
+      <p>Welcome to the Central Library, your peaceful hub for learning and exploration. Find a cozy spot, grab a book, and dive in.</p>
+    </section>
+
+    <section class="card fade-in delay-1">
+      <h2>🕒 Library Timings</h2>
+      <p><strong>Open:</strong> Monday to Sunday<br />
+         <strong>Hours:</strong> 24Hr Open</p>
+    </section>
+
+    <section class="card fade-in delay-3">
+      <h2>📜 Library Rules</h2>
+      <ul>
+        <li>🔇 Silence is golden – please be quiet inside.</li>
+        <li>📕 Handle books and equipment with care.</li>
+        <li>🚫 No food or drinks allowed.</li>
+        <li>📵 Keep phones on silent mode.</li>
+        <li>⏳ Leave seats on time for the next user.</li>
+      </ul>
+    </section>
+
+    <section class="card fade-in delay-4">
+      <h2>📞 Contact Us</h2>
+      <p>📍 Central Library, [Your Institution Name]<br />
+         ☎️ +91-XXXXXXXXXX<br />
+         📧 central.library@email.com</p>
+    </section>
+     <section class="card fade-in delay-5">
+  <h2>📬 Contact Us</h2>
+  <form action="https://formsubmit.co/central.libraryara@gmail.com" method="POST">
+  <!-- Replace YOUR_EMAIL_ADDRESS with your real email -->
+
+  <label for="name">Full Name</label><br />
+  <input type="text" id="name" name="name" required /><br /><br />
+
+  <label for="address">Address</label><br />
+  <textarea id="address" name="address" rows="3" required></textarea><br /><br />
+
+  <label for="mobile">Mobile Number</label><br />
+  <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required /><br /><br />
+
+  <!-- Optional hidden field for better delivery -->
+  <input type="hidden" name="_subject" value="New Contact from Library Website">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <button type="submit" class="btn">Submit</button>
+</form>
+ </section>
+  </main>
+
+ 
+
+  <footer>
+    &copy; 2025 Central Library | Made with ❤️ for Readers
+  </footer>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init -->
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    // const email = document.getElementById("email").value.trim();
+
+    if (mobile.length !== 10 || isNaN(mobile)) {
+      formStatus.textContent = "❌ Enter a valid 10-digit mobile number.";
+      formStatus.style.color = "red";
+      return;
+    }
+    // Display success
+    formStatus.textContent = "✅ Submitted successfully!";
+    formStatus.style.color = "green";
+
+    // Reset form
+    contactForm.reset();
+
+    // TODO: Connect to Google Sheet or send via Email API
+    console.log({ name, address, mobile, email });
+  });
+</script>
+</body>
+</html>
