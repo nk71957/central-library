@@ -11,8 +11,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
+ <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <span style="font-size: 1.8rem;">📚</span>
+        <span>Central Library</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#contactus">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
   <section class="card gallery-section">
-  <h2>📸 Library Gallery</h2>
   <!-- Swiper -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -43,45 +56,73 @@
          <strong>Hours:</strong> 24Hr Open</p>
     </section>
 
+    <section class="card fade-in delay-6 facilities-section" id="facilities">
+      <h2>🏫 Our Facilities</h2>
+      <ul class="facilities-list">
+        <li>👫 For Boys & Girls</li>
+        <li>❄️ Full AC Hall</li>
+        <li>📶 High-Speed WiFi Campus</li>
+        <li>💡 Individual Reading Lights</li>
+        <li>🔋 24x7 Power Backup Service</li>
+        <li>🚺 Separate Seating for Girls</li>
+        <li>☕ Separate Cafeteria</li>
+        <li>📰 Daily Newspapers & Magazines</li>
+      </ul>
+    </section>
+
     <section class="card fade-in delay-3">
       <h2>📜 Library Rules</h2>
       <ul>
         <li>🔇 Silence is golden – please be quiet inside.</li>
         <li>📕 Handle books and equipment with care.</li>
-        <li>🚫 No food or drinks allowed.</li>
+        <!-- <li>🚫 No food or drinks allowed.</li> -->
         <li>📵 Keep phones on silent mode.</li>
-        <li>⏳ Leave seats on time for the next user.</li>
+        <!-- <li>⏳ Leave seats on time for the next user.</li> -->
       </ul>
     </section>
 
     <section class="card fade-in delay-4">
       <h2>📞 Contact Us</h2>
-      <p>📍 Central Library, [Your Institution Name]<br />
-         ☎️ +91-XXXXXXXXXX<br />
-         📧 central.library@email.com</p>
+      <p>📍 Central Library, Godhana Road Infront of Pratap International School, Arrah<br />
+         ☎️ +91-8709031921, +91-7004536730, +91-7903212288<br />
+         📧 central.libraryara@gmail.com</p>
     </section>
-     <section class="card fade-in delay-5">
-  <h2>📬 Contact Us</h2>
-  <form action="https://formsubmit.co/central.libraryara@gmail.com" method="POST">
-  <!-- Replace YOUR_EMAIL_ADDRESS with your real email -->
+    <section class="card fade-in delay-7" id="map">
+      <h2>📍 Our Location</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.9520461050956!2d84.66175517416684!3d25.53997421773388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5ff4888fb813%3A0xa477385dc82aad13!2sCentral%20Library%20Ara%20(24*2A7)!5e0!3m2!1sen!2sin!4v1750484968107!5m2!1sen!2sin" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
 
-  <label for="name">Full Name</label><br />
-  <input type="text" id="name" name="name" required /><br /><br />
+     <section class="card fade-in delay-5" id="contactus">
+        <h2>📬 Contact Us</h2>
+        <form action="https://formsubmit.co/central.libraryara@gmail.com" method="POST">
 
-  <label for="address">Address</label><br />
-  <textarea id="address" name="address" rows="3" required></textarea><br /><br />
+          <label for="name">Full Name</label><br />
+          <input type="text" id="name" name="name" required /><br /><br />
 
-  <label for="mobile">Mobile Number</label><br />
-  <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required /><br /><br />
+          <label for="address">Address</label><br />
+          <textarea id="address" name="address" rows="3" required></textarea><br /><br />
 
-  <!-- Optional hidden field for better delivery -->
-  <input type="hidden" name="_subject" value="New Contact from Library Website">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
+          <label for="mobile">Mobile Number</label><br />
+          <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required /><br /><br />
 
-  <button type="submit" class="btn">Submit</button>
-</form>
- </section>
+          <!-- Optional hidden field for better delivery -->
+          <input type="hidden" name="_subject" value="New Contact from Library Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
   </main>
 
  
@@ -133,8 +174,6 @@
 
     // Reset form
     contactForm.reset();
-
-    // TODO: Connect to Google Sheet or send via Email API
     console.log({ name, address, mobile, email });
   });
 </script>

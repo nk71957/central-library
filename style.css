@@ -12,6 +12,63 @@ body {
   line-height: 1.6;
 }
 
+/* Navbar */
+.navbar {
+  background: #004d40;
+  padding: 1rem 0;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #26a69a;
+}
+
+/* Responsive (optional hamburger style later) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* You can add toggle later */
+  }
+}
+
 /* Header */
 header {
   background: linear-gradient(135deg, #004d40, #00695c);
@@ -156,3 +213,22 @@ form label {
 #formStatus {
   font-weight: bold;
 }
+
+.facilities-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2;
+  font-size: 1.05rem;
+}
+
+.facilities-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.map-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
